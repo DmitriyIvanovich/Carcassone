@@ -1,0 +1,52 @@
+@import url('specialObjectBar.css');
+@import url('write-offWindow.css');
+@import url('history.css');
+@import url('menuBar.css');
+body, h1, h2, h3, p, ul, li{
+    margin:0;
+    padding:0;
+}
+body{
+    background: #d8d8d8;
+
+    --main-background-color: rgba(255, 255, 255, 0.536);
+}
+#main{
+    position: relative;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    height: 700px;
+    width:850px;
+    background-color: #17453B;
+    background-image: url('../image/background_start_window_0.jpg');
+    background-repeat: no-repeat;
+}
+/* .support{
+    padding-top:1px;
+} */
+
+#main > .wrapper{
+    display: grid;
+    grid-column-gap: 10px;
+    position:relative;
+    margin-left: auto;
+    padding:10px;
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    /* background-color: rgba(128, 128, 128, 0.724); */
+}
+.leftSide{
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-rows: max-content max-content 1fr;
+    overflow: hidden;
+    /* background-color: rgba(255, 0, 0, 0.37); */
+}
+
+.rightSide {
+    background-color: var(--main-background-color);
+}
+

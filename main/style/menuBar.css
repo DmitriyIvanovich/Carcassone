@@ -1,0 +1,10 @@
+#menuBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 20px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.284);
+    /* border-right: 1px solid black; */
+}

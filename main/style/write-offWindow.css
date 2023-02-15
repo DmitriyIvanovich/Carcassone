@@ -1,0 +1,51 @@
+.leftSide #write-offWindow {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-column-gap: 10px;
+    padding: 1px 20px;
+    height: 160px;
+    background-color: var(--main-background-color);
+}
+
+.leftSide #write-offWindow .card {
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    background-color: rgba(1, 1, 1, 0.817);
+    background-image: url('../image/special_princesse.png');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 80px;
+    filter:blur(1px) opacity(0.5)
+}
+
+.leftSide #write-offWindow a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto 0;
+    width: 180px;
+    height: 30px;
+    border:2px solid rgba(0, 0, 0, 0.201);
+    border-radius: 10px;
+    background-color: #FDFE0C;
+    /* background-clip: content-box; */
+    text-decoration: none;
+    font-size: 20px;
+    color:black;
+
+}
+
+.leftSide #write-offWindow .specialObjects{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px 0 15px;
+    font-size: 22px;
+}
+
+.leftSide #write-offWindow .specialObjects label{
+    margin-top: 3px;
+}
+.leftSide #write-offWindow .specialObjects span{
+    margin-left: 5px;
+}

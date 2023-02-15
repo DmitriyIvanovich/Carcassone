@@ -1,0 +1,57 @@
+.leftSide #history {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    padding: 10px;
+    background-color: var(--main-background-color);
+    overflow: hidden;
+
+}
+
+.leftSide #history h3 {
+    padding-left: 10px;
+    font-weight: 400;
+}
+
+.leftSide #history hr {
+    width: 250px;
+    margin-left: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+}
+
+.leftSide #history .cards {
+    overflow: auto;
+}
+
+.leftSide #history .card {
+    display: flex;
+    align-items: center;
+    margin-top: 7px;
+}
+
+.leftSide #history .card .icon{
+    position:relative;
+}
+.leftSide #history .card img {
+    height: 90px;
+}
+.leftSide #history .card .icon img:nth-child(2) {
+    position: absolute;
+    top: 55px;
+    right: 6px;
+    height: 30px;
+}
+
+.leftSide #history .card .info {
+    display: flex;
+    padding: 0 0 0 10px;
+    font-size: 25px;
+}
+
+.leftSide #history .card .info img {
+    margin-top: 3px;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}

@@ -1,0 +1,48 @@
+.rightSide {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px 10px 10px;
+    background-color: var(--main-background-color);
+
+}
+
+
+.rightSide>.header h3 {
+    padding-left: 10px;
+    font-weight: 400;
+}
+
+.rightSide>.header hr {
+    width: 250px;
+    margin-left: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+}
+
+.rightSide #desk {
+    position: relative;
+    flex-grow: 1;
+}
+
+.rightSide #desk .cards {
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: max-content max-content max-content;
+    grid-template-rows: max-content;
+    grid-gap: 15px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+.rightSide .card {
+    height: 100px;
+}
+
+.rightSide .cards .card img {
+    width: 100px;
+    height: 100px;
+}

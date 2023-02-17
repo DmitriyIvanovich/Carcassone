@@ -1,7 +1,7 @@
 .leftSide #history {
     display: grid;
     grid-template-rows: 50px 1fr;
-    padding: 10px;
+    padding: 10px 5px 10px 10px;
     background-color: var(--main-background-color);
     overflow: hidden;
 

@@ -30,18 +30,26 @@
     margin-top: 7px;
 }
 
-.leftSide #history .card .icon{
-    position:relative;
+.leftSide #history .card .icon {
+    position: relative;
 }
+
 .leftSide #history .card img {
     height: 90px;
 }
-.leftSide #history .card .icon img:nth-child(2) {
+
+.leftSide #history .card .icon .miniIcon {
+    display: flex;
     position: absolute;
-    top: 55px;
-    right: 6px;
-    height: 30px;
+    top: 65px;
+    left: 100px;
 }
+
+.leftSide #history .card .icon .miniIcon img {
+    height: 30px;
+    margin-left: 7px;
+}
+
 
 .leftSide #history .card .info {
     display: flex;

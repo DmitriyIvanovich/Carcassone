@@ -21,57 +21,23 @@ let dir = console.dir;
 // card_121 333 333 x3
 
 let cardData = [
-    ['111221121', 9, ['1f']],
-    ['121121121', 8, ['1f', '3s']],
+    ['111221121', 9, '1f'],
+    ['121121121', 8, '1f 3s'],
     ['111222121', 4],
     ['121222121', 1],
-    ['111111111', 4, ['4s']],
-    ['111122111', 2, ['2s']],
-    ['131111111', 5, ['1f']],
+    ['111111111', 4, '4s'],
+    ['111122111', 2, '2s'],
+    ['131111111', 5, '1f'],
     ['111322121', 3],
     ['121322111', 3],
-    ['131311111', 2, ['1f']],
-    ['111313111', 3, ['1f']],
+    ['131311111', 2, '1f'],
+    ['111313111', 3, '1f'],
     ['131222111', 4],
     ['131222121', 3],
-    ['133113111', 5, ['2f']],
+    ['133113111', 5, '2f'],
     ['121322331', 5],
     ['111333111', 3],
     ['333333333', 1],
-    ['111333333', 4, ['1f']],
+    ['111333333', 4, '1f'],
     ['121333333', 3],
 ];
-
-class Card {
-    constructor() {
-        this.data = cardData.slice(0);
-
-    }
-    getAllCardsId() {
-        return this.data.map((item) => item[0])
-    }
-    getCardById(id) {
-        let card = {}
-        this.data.forEach(item => {
-            if (item[0] === id) {
-                card.id = id;
-                card.numberCards = item[1];
-                card.specialCardsData = item[2];
-                card.numberSpecialCards = numberSpecialCards();
-                card.allData = item;
-
-                function numberSpecialCards() {
-                    let arr = card.specialCardsData;
-                    if (!arr) return 0;
-                    let number = arr.reduce((prev, item) => {
-                        return prev + parseInt(item);
-                    }, 0)
-                    return number;
-                }
-            }
-        });
-        return card
-    }
-}
-
-export { Card }

@@ -1,0 +1,102 @@
+#filter{
+    margin-right: 5px;
+}
+#filter .buttonOpenClose {
+    margin-top: 2px;
+    height: 20px;
+    background-color: rgba(51, 0, 255, 0.618);
+    border-radius: 10px 10px 0 0;
+}
+
+#filter .buttonOpenClose:hover{
+    background-color: rgba(51, 0, 255, 0.819);
+}
+#filter .buttonOpenClose:active{
+    background-color: rgba(51, 0, 255, 0.462);
+}
+
+#filter .filterMainWindow {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid rgba(51, 0, 255, 0.618);
+    border-top-width: 0px;
+    box-sizing: border-box;
+    /* background-color: rgba(0, 0, 0, 0.287); */
+    
+}
+#filter .filterMainWindow.close{
+    display:none;
+}
+
+#filter .choicePanel {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    width: 130px;
+    height: 130px;
+    background-color: rgba(51, 0, 255, 0.618);
+}
+#filter .choicePanel .tab{
+    background-color: rgb(142, 142, 142);
+}
+#filter .choicePanel .tab:hover{
+    border: 2px solid rgba(219, 219, 219, 0.553);
+}
+#filter .choicePanel .tab[data-value='1']{
+    background-color: green;
+}
+#filter .choicePanel .tab[data-value='2']{
+    background-color: yellow;
+}
+#filter .choicePanel .tab[data-value='3']{
+    background-color: orange;
+}
+
+#filter .filterMainWindow .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    flex-grow: 1;
+}
+#filter .wrapper .checkboxPanel {
+    margin: 0px 0 0 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content;
+    flex-grow: 1;
+    width: max-content;
+}
+
+
+
+#filter .checkboxPanel label {
+    margin-top: 10px;
+}
+
+#filter .checkboxPanel label span {
+    margin-left: 4px;
+    font-size: 22px;
+}
+
+#filter .wrapper .buttonClear {
+    height: 20px;
+    margin-left: 85px;
+    border-radius: 5px;
+    background-color: rgba(255, 0, 0, 0.618);
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color:rgba(53, 53, 54, 0.657);
+    user-select: none;
+}
+
+#filter .wrapper .buttonClear:hover{
+    background-color: rgba(255, 0, 0, 0.752);
+    color: rgba(53, 53, 54, 0.768);
+}
+#filter .wrapper .buttonClear:active{
+    background-color: rgba(0, 255, 38, 0.618);
+    color: rgba(53, 53, 54, 0.768);
+}

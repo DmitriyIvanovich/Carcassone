@@ -102,7 +102,7 @@ class Desk {
         return numbersAllCard;
     }
     getNumberCardInGame(){
-        print(this.cardsInGame.length)
+        // print(this.cardsInGame.length)
         return this.cardsInGame.length;
     }
 }

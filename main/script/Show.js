@@ -99,23 +99,52 @@ class Show {
         divHistory.append(divCard)
     }
     updateDesk(data_FulldataCard){
-        // print(data_FulldataCard)
         let domCard = document.querySelector(`#desk .card[data-id-card = '${+data_FulldataCard.id}']`)
         if (data_FulldataCard.numberCards <= 0) {
             domCard.style.display = 'none';
             return
         }
-        print(data_FulldataCard)
         let domPoint = domCard.querySelector('.point');
         if (isEmpty(data_FulldataCard.specialCards)) {
             domPoint.classList.remove('special');
         }
         domPoint.innerHTML = `${data_FulldataCard.numberCards}`
+        
         function isEmpty(obj) {
             for (let key in obj) {
                 return false;
             }
             return true;
+        }
+    }
+
+    updateCounters(){
+        this.__updateSpecialObjectBar(manager.desk.getDataForSpecialObject())
+        this.__updateDeskCounter(manager.desk.getNumberCardNow())
+        this.__updateHistoryCounter(manager.desk.getNumberCardInGame())
+    }
+
+    __updateHistoryCounter(numberCards){
+        let h3 = document.querySelector('#history h3')
+        h3.firstElementChild.textContent = numberCards;
+    }
+
+    __updateDeskCounter(numberCards){
+        let h3 = document.querySelector('.rightSide h3')
+        h3.firstElementChild.textContent = numberCards;
+    }
+
+    __updateSpecialObjectBar(DataForSpecialObject){
+        let lis = document.querySelectorAll('#specialObjectBar li');
+        anchor: for (let elem of lis){
+            let nameObj = elem.querySelector('img').src;
+            for (let key in DataForSpecialObject){
+                if (nameObj.includes(key)){
+                    elem.lastElementChild.innerHTML = `${DataForSpecialObject[key]}`
+                    continue anchor;
+                }
+            }
+            if (!elem.classList.contains('enpty')) elem.classList.add('enpty')
         }
     }
 }

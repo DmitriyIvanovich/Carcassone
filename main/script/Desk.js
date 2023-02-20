@@ -80,5 +80,29 @@ class Desk {
         }
     }
 
+    getDataForSpecialObject(){
+        let specialObjects = {};
+        for (let item of this.cards){
+            if (!item.specialCards) continue;
+            for (let key in item.specialCards){
+                if (specialObjects[key]===undefined){
+                    specialObjects[key]= item.specialCards[key];
+                }
+                else specialObjects[key] += item.specialCards[key];
+            }
+        }
+        return(specialObjects)
+    }
     
+    getNumberCardNow(){
+        let numbersAllCard = 0;
+        for (let card of this.cards) {
+            numbersAllCard += card.numberCards
+        }
+        return numbersAllCard;
+    }
+    getNumberCardInGame(){
+        print(this.cardsInGame.length)
+        return this.cardsInGame.length;
+    }
 }

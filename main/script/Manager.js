@@ -6,6 +6,7 @@ class Manager {
 
     start() {
         this.show.showCards(this.desk);
+        manager.show.updateCounters()
         runEvents();
 
         function runEvents() {
@@ -28,7 +29,7 @@ class Manager {
                 let id = dataCard[0];
                 let data_FulldataCard = manager.desk.getCardById(id) 
                 manager.show.updateDesk(data_FulldataCard);
-                // manager.show.updateSpecialObjectBar()
+                manager.show.updateCounters(manager.desk.getDataForSpecialObject())
 
             }
         }

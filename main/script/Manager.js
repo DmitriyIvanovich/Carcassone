@@ -12,12 +12,12 @@ class Manager {
         runEvents();
 
         function runEvents() {
-            runEventChoice();
-            runEventWriteOff();
-            runEventfilter();
+            runHendlerChoice();
+            runHendlerWriteOff();
+            runHendlerFilter();
         }
 
-        function runEventWriteOff() {
+        function runHendlerWriteOff() {
             let button = document.querySelector('#write-offWindow a');
             button.addEventListener('click', writeOffCard)
 
@@ -37,7 +37,7 @@ class Manager {
             }
         }
 
-        function runEventChoice() {
+        function runHendlerChoice() {
             let cards = document.querySelector('#desk > .cards');
             cards.addEventListener('click', choice);
 
@@ -48,14 +48,14 @@ class Manager {
             }
         }
 
-        function runEventfilter() {
+        function runHendlerFilter() {
             let but = document.querySelector('#filter > div.buttonOpenClose');
             but.onclick = () => manager.filter.differentHiddenFilter();
 
             let win = document.querySelector('#filter > div.filterMainWindow');
             win.addEventListener('click', eventMatrixMouseL);
             win.addEventListener('contextmenu', eventMatrixMouseR);
-            win.addEventListener('click', updateShowDesk);
+            // win.addEventListener('click', updateShowDesk);
             win.addEventListener('click', zeroingMatrixBut);
 
             function eventMatrixMouseL(event) {
@@ -65,6 +65,7 @@ class Manager {
                 if (tab.dataset.value < manager.filter.numberLocation) {
                     tab.dataset.value++;
                 }
+                updateShowDesk(event);
             }
             function eventMatrixMouseR(event) {
                 event.preventDefault()
@@ -74,17 +75,22 @@ class Manager {
                 if (tab.dataset.value > 0) {
                     tab.dataset.value--;
                 }
+                updateShowDesk(event);
             }
             function zeroingMatrixBut(event) {
                 if (!event.target.closest('div.buttonClear')) return;
                 manager.filter.clearMatrix();
+                updateShowDesk(event);
+            }
+            function updateShowDesk(event){
+                // let target = event.target;
+                // if (!target.closest('.tab') && !target.closest('label')) return;
+                // pause
+                const cardsDOM = document.querySelectorAll('#desk .card')
+                manager.filter.filteringCart(cardsDOM)
             }
 
-            function updateShowDesk(event){
-                let target = event.target;
-                if (!target.closest('.tab') && !target.closest('label')) return;
-                // pause
-            }
+           
         }
     }
 }

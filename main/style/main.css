@@ -8,9 +8,12 @@ body, h1, h2, h3, p, ul, li{
     margin:0;
     padding:0;
 }
+html{
+    height: 100%;
+}
 body{
     background: #d8d8d8;
-
+    height: 100%;
     --main-background-color: rgba(255, 255, 255, 0.536);
 }
 #main{
@@ -18,7 +21,8 @@ body{
     margin-left:auto;
     margin-right:auto;
     padding:0;
-    height: 700px;
+    /* height: 700px; */
+    height: 100%;
     width:850px;
     background-color: #17453B;
     background-image: url('../image/background_start_window_0.jpg');

@@ -55,7 +55,7 @@ class Manager {
             let win = document.querySelector('#filter > div.filterMainWindow');
             win.addEventListener('click', eventMatrixMouseL);
             win.addEventListener('contextmenu', eventMatrixMouseR);
-            // win.addEventListener('click', updateShowDesk);
+            win.addEventListener('click', selectSpecialObject);
             win.addEventListener('click', zeroingMatrixBut);
 
             function eventMatrixMouseL(event) {
@@ -80,17 +80,18 @@ class Manager {
             function zeroingMatrixBut(event) {
                 if (!event.target.closest('div.buttonClear')) return;
                 manager.filter.clearMatrix();
+                manager.filter.clearSelectCheckboxes();
                 updateShowDesk(event);
             }
+            function selectSpecialObject(event){
+                if (!event.target.closest('label')) return;
+                updateShowDesk(event);
+            }
+
             function updateShowDesk(event){
-                // let target = event.target;
-                // if (!target.closest('.tab') && !target.closest('label')) return;
-                // pause
                 const cardsDOM = document.querySelectorAll('#desk .card')
                 manager.filter.filteringCart(cardsDOM)
             }
-
-           
         }
     }
 }

@@ -16,6 +16,7 @@ class Manager {
             runHendlerWriteOff();
             runHendlerFilter();
             runHendlerMenuBar();
+            runHendlerHistory();
         }
 
         function runHendlerWriteOff() {
@@ -29,12 +30,18 @@ class Manager {
                 manager.desk.writeOffCard(dataCard);
 
                 manager.show.addCardInHistoryWindow(dataCard, manager.desk.cardsInGame.length);
+                _skrollingFullDownHistory();
 
                 let id = dataCard[0];
                 let data_FulldataCard = manager.desk.getCardById(id)
                 manager.show.updateDesk(data_FulldataCard);
                 manager.show.updateCounters(manager.desk.getDataForSpecialObject())
 
+
+                function _skrollingFullDownHistory() {
+                    let scrolDiv = document.querySelector('#history>.cards');
+                    scrolDiv.scrollTop = 9999999;
+                }
             }
         }
 
@@ -84,38 +91,43 @@ class Manager {
                 manager.filter.clearSelectCheckboxes();
                 updateShowDesk(event);
             }
-            function selectSpecialObject(event){
+            function selectSpecialObject(event) {
                 if (!event.target.closest('label')) return;
                 updateShowDesk(event);
             }
 
-            function updateShowDesk(event){
+            function updateShowDesk(event) {
                 const cardsDOM = document.querySelectorAll('#desk .card')
                 manager.filter.filteringCart(cardsDOM)
             }
         }
 
-        function runHendlerMenuBar(){
+        function runHendlerMenuBar() {
             let div = document.getElementById('menuBar');
-            div.addEventListener('click', (event)=>{
-               div.classList.add('open');
-            setTimeout(()=>div.firstElementChild.classList.remove('close'), 500);
+            div.addEventListener('click', (event) => {
+                div.classList.add('open');
+                setTimeout(() => div.firstElementChild.classList.remove('close'), 500);
             });
 
-            div.addEventListener('mouseleave', (event)=>{
+            div.addEventListener('mouseleave', (event) => {
                 div.firstElementChild.classList.add('close')
-                div.classList.remove('open') 
+                div.classList.remove('open')
             });
-            div.addEventListener('click', (event)=>{
-                if (event.target.closest('.restart')){
+            div.addEventListener('click', (event) => {
+                if (event.target.closest('.restart')) {
                     manager.restart();
                 }
             });
         }
+        function runHendlerHistory() {
+            // let scrolDiv = document.querySelector('#history>.cards');
+            // scrolDiv.addEventListener('scroll', (event) => {
+            //     print(scrolDiv.scrollTop)
+            // })
+        }
     }
 
-    restart(){
-        print(111)
+    restart() {
         this.desk.restartDesk();
         this.show.restartCard(this.desk);
         this.show.updateCounters();

@@ -21,6 +21,11 @@
 }
 
 .leftSide #history .cards {
+    position: relative;
+    overflow: auto;
+}
+.leftSide #history .cards .wrapper{
+    position: relative;
     overflow: auto;
 }
 
@@ -51,10 +56,20 @@
 }
 
 
-.leftSide #history .card .info {
+.leftSide #history .card .info{
     display: flex;
     padding: 0 0 0 10px;
     font-size: 25px;
+    font-weight: 600;
+}
+.leftSide #history .card{
+    color:rgb(182, 0, 0);
+}
+.leftSide #history .card:first-child{
+    color:rgb(0, 0, 0);
+}
+.leftSide #history .card:nth-child(2n+2){
+    color:blue;
 }
 
 .leftSide #history .card .info img {

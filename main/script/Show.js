@@ -130,7 +130,7 @@ class Show {
     }
 
     updateCounters(){
-        print(22233)
+        // print(22233)
         this.__updateSpecialObjectBar(manager.desk.getDataForSpecialObject())
         this.__updateDeskCounter(manager.desk.getNumberCardNow())
         this.__updateHistoryCounter(manager.desk.getNumberCardInGame())
@@ -147,7 +147,7 @@ class Show {
     }
 
     __updateSpecialObjectBar(DataForSpecialObject){
-        print(DataForSpecialObject)
+        // print(DataForSpecialObject)
         let lis = document.querySelectorAll('#specialObjectBar li');
         anchor: for (let elem of lis){
             let nameObj = elem.querySelector('img').src;

@@ -25,7 +25,15 @@ class Show {
 
             cardsNode.append(div);
         }
+
         document.querySelector('#desk > .cards').append(cardsNode);
+    }
+    restartCard(desk){
+        document.querySelector('#desk > .cards').innerHTML='';
+        this.showCards(desk);
+        this.clearHistoryCards()
+        this.clearWriteOffWindow();
+        this.__updateSpecialObjectBar()
     }
 
     clearWriteOffWindow() {
@@ -48,6 +56,9 @@ class Show {
 
             return specialObj;
         }
+    }
+    clearHistoryCards(){
+        document.querySelector('#history .cards > .wrapper').innerHTML = '';
     }
 
     showCardInWriteOffWindow(card) {
@@ -119,6 +130,7 @@ class Show {
     }
 
     updateCounters(){
+        print(22233)
         this.__updateSpecialObjectBar(manager.desk.getDataForSpecialObject())
         this.__updateDeskCounter(manager.desk.getNumberCardNow())
         this.__updateHistoryCounter(manager.desk.getNumberCardInGame())
@@ -135,16 +147,21 @@ class Show {
     }
 
     __updateSpecialObjectBar(DataForSpecialObject){
+        print(DataForSpecialObject)
         let lis = document.querySelectorAll('#specialObjectBar li');
         anchor: for (let elem of lis){
             let nameObj = elem.querySelector('img').src;
             for (let key in DataForSpecialObject){
                 if (nameObj.includes(key)){
                     elem.lastElementChild.innerHTML = `${DataForSpecialObject[key]}`
+                    elem.classList.remove('enpty');
                     continue anchor;
                 }
             }
-            if (!elem.classList.contains('enpty')) elem.classList.add('enpty')
+            if (!elem.classList.contains('enpty')){
+                elem.classList.add('enpty');
+                elem.lastElementChild.innerHTML = '0';
+            }
         }
     }
 }

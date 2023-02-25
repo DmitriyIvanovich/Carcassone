@@ -22,8 +22,10 @@ class Desk {
         return dataCard;
     }
 
-    restartDesk(cardData) {
-        // constructor(cardData);
+    restartDesk() {
+        print(222)
+        this.cards = this.__createCards(this.__startData);
+        this.cardsInGame = [];
     }
 
     __createCards(data) {

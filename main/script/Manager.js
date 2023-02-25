@@ -106,6 +106,18 @@ class Manager {
                 div.firstElementChild.classList.add('close')
                 div.classList.remove('open') 
             });
+            div.addEventListener('click', (event)=>{
+                if (event.target.closest('.restart')){
+                    manager.restart();
+                }
+            });
         }
+    }
+
+    restart(){
+        print(111)
+        this.desk.restartDesk();
+        this.show.restartCard(this.desk);
+        this.show.updateCounters();
     }
 }

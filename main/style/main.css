@@ -10,6 +10,7 @@ body, h1, h2, h3, p, ul, li{
 }
 html{
     height: 100%;
+    user-select: none;
 }
 body{
     background: #d8d8d8;

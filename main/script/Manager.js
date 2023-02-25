@@ -15,6 +15,7 @@ class Manager {
             runHendlerChoice();
             runHendlerWriteOff();
             runHendlerFilter();
+            runHendlerMenuBar();
         }
 
         function runHendlerWriteOff() {
@@ -92,6 +93,19 @@ class Manager {
                 const cardsDOM = document.querySelectorAll('#desk .card')
                 manager.filter.filteringCart(cardsDOM)
             }
+        }
+
+        function runHendlerMenuBar(){
+            let div = document.getElementById('menuBar');
+            div.addEventListener('click', (event)=>{
+               div.classList.add('open');
+            setTimeout(()=>div.firstElementChild.classList.remove('close'), 500);
+            });
+
+            div.addEventListener('mouseleave', (event)=>{
+                div.firstElementChild.classList.add('close')
+                div.classList.remove('open') 
+            });
         }
     }
 }

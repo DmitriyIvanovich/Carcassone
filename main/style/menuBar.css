@@ -7,4 +7,89 @@
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.284);
     /* border-right: 1px solid black; */
+    transition: all .2s ease-out 0.2s;
 }
+
+#menuBar .interface {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+#menuBar .interface.close {
+    display: none;
+}
+
+#menuBar:hover {
+    background-color: rgba(255, 255, 255, 0.784);
+    border-left: 2px solid black;
+    transition: all .0s ease-out 0.0s;
+}
+
+#menuBar.open {
+    width: 250px;
+    /* background-color: rgba(0, 0, 0, 0.498); */
+    background: rgb(0, 94, 128) center top/25px 25px repeat radial-gradient(circle at center, rgba(0, 0, 0, 0.134) 10px, transparent 15px);
+    transition: width .2s ease-out 0.2s;
+}
+
+#menuBar .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#menuBar .ad {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.943);
+    padding: 10px;
+    margin: 10px;
+    height: 350px;
+    border-radius: 10px;
+
+}
+
+#menuBar .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#menuBar a {
+    /* display: block; */
+    margin-top: 20px;
+    width: 80%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: rgb(221, 255, 0);
+    border-radius: 5px;
+    user-select: none;
+    text-decoration: none;
+    color: black;
+}
+
+#menuBar a:active {
+    background-color: rgb(189, 218, 0);
+
+}
+
+#menuBar a:hover {
+    outline: 3px solid rgb(0, 0, 0);
+}
+
+
+#menuBar a.enpty {
+    background: rgba(255, 255, 255, 0.501);
+    border: 0;
+    outline: 0;
+    pointer-events: none;
+}
+

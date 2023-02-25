@@ -1,52 +1,83 @@
-body, h1, h2, h3, p, ul, li{
-    margin:0;
-    padding:0;
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
 }
-body{
-    background: #17453B;
+
+html {
+    height: 100%;
 }
-#startMenu{
-    margin-left:auto;
-    margin-right:auto;
-    padding:0;
-    height: 700px;
+
+body {
+    background: #d8d8d8;
+    height: 100%;
+}
+
+#startMenu {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    height: 750px;
     width: 850px;
-    background-color: grey;
-    background-image: url("../image/background_start_window_0.jpg");
+    background-color: #17453B;
+    background-image: url('../image/background_start_window_0.jpg');
+    background-repeat: no-repeat;
 }
-.support{
-    padding-top:1px;
+
+.support {
+    padding-top: 1px;
 }
-#startMenu p{
+
+#startMenu p {
     margin-top: 100px;
     text-align: center;
-    color:red;
+    color: red;
     font-weight: bold;
     font-size: 60px;
 
 }
 
-.naw{
+.naw {
     display: flex;
     justify-content: space-between;
-    margin-top:430px;
-    width:600px;
+    margin-top: 430px;
+    width: 600px;
     margin-left: auto;
     margin-right: auto;
 
 }
-.naw li{
-    
+
+.naw li {
+
     text-align: center;
     line-height: 40px;
     display: block;
     width: 160px;
     height: 40px;
-    background-color: yellow;
-    border: 2px solid black;
-    border-radius: 5px;
 }
-.naw a{ display: block;
+
+.naw a {
+    display: block;
     text-decoration: none;
+    background-color: yellow;
+    border-radius: 5px;
     color: black;
+}
+
+.naw a:hover {
+    outline: 2px solid rgb(0, 0, 0);
+}
+
+
+
+a.enpty {
+    background: rgb(196, 196, 196);
+    border: 0;
+    outline: 0;
+    pointer-events: none;
 }

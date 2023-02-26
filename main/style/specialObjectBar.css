@@ -1,30 +1,33 @@
 .leftSide #specialObjectBar {
     background-color: var(--main-background-color);
-    height: 60px;
-}
-
-.leftSide #specialObjectBar ul{
-    display: flex;
-        align-items: center;
     height: 100%;
+    padding-top:5px;
 }
 
-.leftSide #specialObjectBar li{
+.leftSide #specialObjectBar ul {
     display: flex;
-    align-items: flex-end;
-    margin-left: 20px;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.leftSide #specialObjectBar li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     list-style: none;
 }
 
-.leftSide #specialObjectBar li.enpty{
+.leftSide #specialObjectBar li.enpty {
     opacity: 0.3;
 }
 
-.leftSide #specialObjectBar li img{
+.leftSide #specialObjectBar li img {
     height: 40px;
 }
 
-.leftSide #specialObjectBar li span{
+.leftSide #specialObjectBar li span {
     position: relative;
     padding-left: 5px;
     font-size: 30px;

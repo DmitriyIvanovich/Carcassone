@@ -106,7 +106,11 @@ class Manager {
             let div = document.getElementById('menuBar');
             div.addEventListener('click', (event) => {
                 div.classList.add('open');
-                setTimeout(() => div.firstElementChild.classList.remove('close'), 500);
+                setTimeout(() => {
+                    print(div.classList.contains('open'))
+                    if (!div.classList.contains('open')) return;
+                    div.firstElementChild.classList.remove('close');
+                }, 500);
             });
 
             div.addEventListener('mouseleave', (event) => {

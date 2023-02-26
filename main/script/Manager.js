@@ -105,21 +105,17 @@ class Manager {
         function runHendlerMenuBar() {
             let div = document.getElementById('menuBar');
             div.addEventListener('click', (event) => {
-                div.classList.add('open');
-                setTimeout(() => {
-                    print(div.classList.contains('open'))
-                    if (!div.classList.contains('open')) return;
-                    div.firstElementChild.classList.remove('close');
-                }, 500);
+                manager.show.openMenuBar(div);
             });
 
             div.addEventListener('mouseleave', (event) => {
-                div.firstElementChild.classList.add('close')
-                div.classList.remove('open')
+                
+                manager.show.closeMenuBar(div);
             });
             div.addEventListener('click', (event) => {
                 if (event.target.closest('.restart')) {
                     manager.restart();
+                    manager.show.closeMenuBar(div);
                 }
             });
         }

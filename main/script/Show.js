@@ -164,4 +164,17 @@ class Show {
             }
         }
     }
+
+    openMenuBar(div){
+        div.classList.add('open');
+        setTimeout(() => {
+            if (!div.classList.contains('open')) return;
+            div.firstElementChild.classList.remove('close');
+        }, 500);
+    }
+    closeMenuBar(div) {
+        div.firstElementChild.classList.add('close')
+        div.classList.remove('open')
+    }
+    
 }

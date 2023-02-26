@@ -4,6 +4,7 @@
 @import url('menuBar.css');
 @import url('cardInDesk.css');
 @import url('filter.css');
+@import url('modal.css');
 body, h1, h2, h3, p, ul, li{
     margin:0;
     padding:0;

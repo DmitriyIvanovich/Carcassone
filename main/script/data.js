@@ -68,4 +68,4 @@ let deskAbbotPrincesseDragon = [
     ['221212122', 1, '1o'],
 ];
 
-let cardData = deskAbbotPrincesseDragon;
+let cardData = deskAbbot;

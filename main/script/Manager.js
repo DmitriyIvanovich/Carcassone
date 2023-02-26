@@ -6,6 +6,7 @@ class Manager {
     }
 
     start() {
+        this.runModalWindowDeskSelection()
         this.show.showCards(this.desk);
         this.show.updateCounters()
 
@@ -109,12 +110,12 @@ class Manager {
             });
 
             div.addEventListener('mouseleave', (event) => {
-                
+
                 manager.show.closeMenuBar(div);
             });
             div.addEventListener('click', (event) => {
                 if (event.target.closest('.restart')) {
-                    manager.restart();
+                    manager.runModalWindowDeskSelection();
                     manager.show.closeMenuBar(div);
                 }
             });
@@ -131,5 +132,32 @@ class Manager {
         this.desk.restartDesk();
         this.show.restartCard(this.desk);
         this.show.updateCounters();
+    }
+
+    runModalWindowDeskSelection() {
+        let modal = document.createElement('div');
+        modal.id = 'modal';
+        modal.innerHTML = `<div class="message"><h3>Выберите режим игры</h3><div class="mode"></div></div>`;
+        modal.querySelector('.mode').innerHTML =
+            `<img src="./image/_abbot.png" data-mode="abbot">
+        <img src="./image/_princesse.png" data-mode="princesse">`;
+        let abbot = modal.querySelector('.mode :first-child');
+        abbot.addEventListener('click', (event) => {
+            cardData = deskAbbot;
+            manager.restart();
+            print(1)
+            modal.remove()
+        })
+        let princesse = modal.querySelector('.mode :last-child');
+        princesse.addEventListener('click', (event) => {
+            cardData = deskAbbotPrincesseDragon;
+            manager.restart();
+            modal.remove()
+        })
+        modal.addEventListener('click', (event)=>{
+            if (event.target.id === 'modal')modal.remove()
+        })
+        let divMain = document.querySelector('#main')
+        divMain.append(modal);
     }
 }

@@ -1,8 +1,6 @@
 class Desk {
     constructor(cardData) {
-        this.__startData = cardData.slice(0);
-        this.cards = this.__createCards(this.__startData);
-        this.cardsInGame = [];
+        this.restartDesk()
     }
 
     getAllCardsId() {
@@ -23,7 +21,8 @@ class Desk {
     }
 
     restartDesk() {
-        print(222)
+        print('restart desk')
+        this.__startData = cardData.slice(0);
         this.cards = this.__createCards(this.__startData);
         this.cardsInGame = [];
     }

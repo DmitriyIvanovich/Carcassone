@@ -19,7 +19,7 @@
     display: flex;
     width: 100%;
     padding: 10px;
-    border: 2px solid rgba(51, 0, 255, 0.618);
+    border: 2px solid rgba(255, 255, 255, 0.552);
     border-top-width: 0px;
     box-sizing: border-box;
     /* background-color: rgba(0, 0, 0, 0.287); */
@@ -36,7 +36,7 @@
     grid-gap: 5px;
     width: 130px;
     height: 130px;
-    background-color: rgba(51, 0, 255, 0.618);
+    background-color: rgba(51, 0, 255, 0.44);
 }
 #filter .choicePanel .tab{
     background-color: rgb(142, 142, 142);
@@ -64,7 +64,7 @@
     margin: 0px 0 0 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: max-content;
+    grid-template-rows: max-content max-content;
     flex-grow: 1;
     width: max-content;
 }
@@ -72,7 +72,7 @@
 
 
 #filter .checkboxPanel label {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 #filter .checkboxPanel label span {

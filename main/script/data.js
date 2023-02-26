@@ -20,7 +20,7 @@ let dir = console.dir;
 // card_111 333 333 x4 f1
 // card_121 333 333 x3
 
-let cardData = [
+let deskAbbot = [
     ['111221121', 9, '1f'],
     ['121121121', 8, '1f'],
     ['111222121', 4],
@@ -67,3 +67,5 @@ let deskAbbotPrincesseDragon = [
     ['111331331', 1, '1p'],
     ['221212122', 1, '1o'],
 ];
+
+let cardData = deskAbbotPrincesseDragon;

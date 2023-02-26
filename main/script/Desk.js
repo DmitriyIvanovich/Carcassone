@@ -62,6 +62,8 @@ class Desk {
                                 return 'princesse';
                             case 'o':
                                 return 'portal';
+                            case 'v':
+                                return 'vulcano';
                         }
                     }
                 })

@@ -51,13 +51,16 @@
 
 .leftSide #write-offWindow .specialObjects {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    padding: 10px 0px 0 15px;
+    height: 100px;
+    padding: 10px 0px 0 10px;
     font-size: 22px;
 }
 
 .leftSide #write-offWindow .specialObjects label {
     margin-top: 3px;
+    width: max-content;
 }
 
 .leftSide #write-offWindow .specialObjects span {

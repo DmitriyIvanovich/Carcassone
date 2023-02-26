@@ -16,6 +16,10 @@
     list-style: none;
 }
 
+.leftSide #specialObjectBar li.enpty{
+    opacity: 0.3;
+}
+
 .leftSide #specialObjectBar li img{
     height: 40px;
 }

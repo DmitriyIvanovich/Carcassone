@@ -139,8 +139,8 @@ class Manager {
         modal.id = 'modal';
         modal.innerHTML = `<div class="message"><h3>Выберите режим игры</h3><div class="mode"></div></div>`;
         modal.querySelector('.mode').innerHTML =
-            `<img src="./image/_abbot.png" data-mode="abbot">
-        <img src="./image/_princesse.png" data-mode="princesse">`;
+            `<img src="./image/abbot.png" data-mode="abbot">
+        <img src="./image/princesse.png" data-mode="princesse">`;
         let abbot = modal.querySelector('.mode :first-child');
         abbot.addEventListener('click', (event) => {
             cardData = deskAbbot;
